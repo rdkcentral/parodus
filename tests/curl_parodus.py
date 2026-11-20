@@ -1,3 +1,37 @@
+#
+# If not stated otherwise in this file or this component's Licenses.txt file the
+# following copyright and licenses apply:
+#
+# Copyright 2026 RDK Management
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#
+#*********************************************************************
+# Copyright [2026] [Cisco Systems, Inc.]
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#********************************************************************/
 #-----------------------------------------------------------------
 #  curl_parodus.py
 #-----------------------------------------------------------------
@@ -67,7 +101,7 @@ for line in fin:
 
 payload_str = ",".join (set_list)
 
-url_base = "https://api-beta.webpa.comcast.net:8090/api/v2/device/"
+url_base = "https://api-beta.webpa.example.net:8090/api/v2/device/"
 
 cmd_url = "%smac:%s/%s?names=%s" % (url_base, device_id, SERVICE_NAME, payload_str)
 #print cmd_url
@@ -76,7 +110,7 @@ cmd_url = "%smac:%s/%s?names=%s" % (url_base, device_id, SERVICE_NAME, payload_s
 auth_str = "%s: %s" % (HEADER_AUTH, BASIC_AUTH_VALUE)
 
 cmd = ["curl", "-H", auth_str, "-k", "--max-time", "10", cmd_url]
-#cmd = ["curl", "-H", auth_str, "-k", 
+#cmd = ["curl", "-H", auth_str, "-k",
 #       "--connect-timeout", "150", "--max-time", "180", cmd_url]
 err_cnt = 0
 
@@ -98,7 +132,7 @@ try:
       #continue
     #for line in sub_pro.read_stdout (show_lines=False):
       #sys.stdout.write (timestamp() + line)
-    #if sub_pro.errors: 
+    #if sub_pro.errors:
       #read_err_cnt += 1
   #end while
 except KeyboardInterrupt, e:
@@ -107,7 +141,7 @@ except KeyboardInterrupt, e:
 except StandardError, e:
   print e
   print "Timeout Errors", err_cnt
- 
+
 
 #req = URL.Request (cmd_url)
 #req.add_header (HEADER_AUTH, BASIC_AUTH_VALUE)
@@ -115,4 +149,4 @@ except StandardError, e:
 #f = URL.urlopen (req)
 
 
-#  -k https://scytale-beta.webpa.comcast.net:8090/api/v2/device/mac:14cfe213e1d2/config?names=
+#  -k https://scytale-beta.webpa.example.net:8090/api/v2/device/mac:14cfe213e1d2/config?names=

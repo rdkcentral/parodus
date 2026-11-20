@@ -2405,7 +2405,7 @@ void err_updateObject_cloud_disconnectInvalid()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\": \"***\" }");
 	respMsg->msg_type = 7;
@@ -2428,7 +2428,7 @@ void err_updateObject_cloud_disconnectNULL()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\": \"\" }");
 	respMsg->msg_type = 7;
@@ -2451,7 +2451,7 @@ void err_updateObject_no_cloud_disconnectReason()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"discon-val\": \"XPC\" }");
 	respMsg->msg_type = 7;
@@ -2474,7 +2474,7 @@ void err_updateObject_cloud_disconnectNoPayload()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	respMsg->msg_type = 7;
 	ret = updateObject(reqMsg, &respMsg);
@@ -2497,7 +2497,7 @@ void err_updateObject_cloud_disconnectInvalidPayload()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\"\"XPC\" }");
 	respMsg->msg_type = 7;
@@ -2520,7 +2520,7 @@ void err_updateObject_cloud_disconnectInvalidType()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\":123 }");
 	respMsg->msg_type = 7;
@@ -2544,7 +2544,7 @@ void err_updateObject_cloud_disconnectFailure()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\":\"XPC09\" }");
 	respMsg->msg_type = 7;
@@ -2568,7 +2568,7 @@ void test_updateObject_cloud_disconnect()
 	memset(respMsg, 0, sizeof(wrp_msg_t));
 	reqMsg->msg_type = 7;
 	reqMsg->u.crud.transaction_uuid = strdup("1234");
-	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.comcast.net/config");
+	reqMsg->u.crud.source = strdup("dns:tr1d1um.webpa.example.net/config");
 	reqMsg->u.crud.dest = strdup("mac:14cfe2142145/parodus/cloud-disconnect");
 	reqMsg->u.crud.payload = strdup("{ \"disconnection-reason\":\"XPC\" }");
 	respMsg->msg_type = 7;

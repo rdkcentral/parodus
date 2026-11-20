@@ -201,7 +201,7 @@ void test_parseCommandLine()
 		"--boot-time-retry-wait=10",
 		"--ssl-cert-path=/etc/ssl/certs/ca-certificates.crt",
 		"--client-cert-path=testcert",
-		"--token-server-url=https://dev.comcast.net/token",
+		"--token-server-url=https://dev.example.net/token",
 #ifdef FEATURE_DNS_QUERY
 		"--acquire-jwt=1",
 		"--dns-txt-url=mydns.mycom.net",
@@ -249,7 +249,7 @@ void test_parseCommandLine()
     assert_string_equal(  get_parodus_cfg()->webpa_auth_token,expectedToken);
     assert_string_equal(  parodusCfg.cert_path,"/etc/ssl/certs/ca-certificates.crt");
 	assert_string_equal(  parodusCfg.client_cert_path,"testcert");
-	assert_string_equal(  parodusCfg.token_server_url,"https://dev.comcast.net/token");
+	assert_string_equal(  parodusCfg.token_server_url,"https://dev.example.net/token");
 #ifdef FEATURE_DNS_QUERY
 	assert_int_equal( (int) parodusCfg.acquire_jwt, 1);
     assert_string_equal(parodusCfg.dns_txt_url, "mydns.mycom.net");
@@ -350,7 +350,7 @@ void test_loadParodusCfg()
 #endif
 	Cfg->crud_config_file = strdup("parodus_cfg.json");
 	Cfg->client_cert_path = strdup("testcert");
-	Cfg->token_server_url = strdup("https://dev.comcast.net/token");
+	Cfg->token_server_url = strdup("https://dev.example.net/token");
     memset(&tmpcfg,0,sizeof(ParodusCfg));
     loadParodusCfg(Cfg,&tmpcfg);
 
@@ -362,7 +362,7 @@ void test_loadParodusCfg()
     assert_string_equal( tmpcfg.partner_id, "shaw");
     assert_string_equal( tmpcfg.webpa_protocol, protocol);
 	assert_string_equal(tmpcfg.client_cert_path, "testcert");
-	assert_string_equal(tmpcfg.token_server_url, "https://dev.comcast.net/token");
+	assert_string_equal(tmpcfg.token_server_url, "https://dev.example.net/token");
 #ifdef FEATURE_DNS_QUERY
 	assert_int_equal( (int) tmpcfg.acquire_jwt, 1);
     assert_string_equal(tmpcfg.dns_txt_url, "mydns");

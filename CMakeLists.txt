@@ -37,18 +37,18 @@ include_directories(${INCLUDE_DIR}
                     ${INCLUDE_DIR}/msgpack
 	            ${INCLUDE_DIR}/curl
                     ${INCLUDE_DIR}/trower-base64
-                    ${INCLUDE_DIR}/wrp-c                   
+                    ${INCLUDE_DIR}/wrp-c
                     ${INCLUDE_DIR}/libparodus
                     ${INCLUDE_DIR}/cimplog
                     ${INCLUDE_DIR}/cjwt
-					)	
+					)
 
 if (ENABLE_WEBCFGBIN)
 include_directories(${INCLUDE_DIR}/rbus)
 endif (ENABLE_WEBCFGBIN)
 
 
-# Get git commit hash 
+# Get git commit hash
 #-------------------------------------------------------------------------------
 execute_process(
   COMMAND git describe --tags --always
@@ -57,7 +57,7 @@ execute_process(
   OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 
-add_definitions("-DGIT_COMMIT_TAG=\"${GIT_COMMIT_TAG}\"")	
+add_definitions("-DGIT_COMMIT_TAG=\"${GIT_COMMIT_TAG}\"")
 
 # Compile options/flags
 #-------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ if (NOT BUILD_YOCTO)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(trower-base64
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/trower-base64
-    GIT_REPOSITORY https://github.com/Comcast/trower-base64.git
+    GIT_REPOSITORY https://github.com/rdkcentral/trower-base64.git
     GIT_TAG "v1.1.1"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
@@ -99,7 +99,7 @@ add_dependencies(libtrower-base64 trower-base64)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(nopoll
     PREFIX ${PREFIX_DIR}/nopoll
-    GIT_REPOSITORY https://github.com/Comcast/nopoll.git
+    GIT_REPOSITORY https://github.com/rdkcentral/nopoll.git
     GIT_TAG "1.0.3"
     CONFIGURE_COMMAND COMMAND <SOURCE_DIR>/autogen.sh --prefix=${PREFIX}
                                                      --includedir=${INCLUDE_DIR}
@@ -145,7 +145,7 @@ ExternalProject_Add(msgpack
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMSGPACK_ENABLE_CXX=OFF
                   -DMSGPACK_BUILD_EXAMPLES=OFF
-                  -DMSGPACK_BUILD_TESTS=OFF                  
+                  -DMSGPACK_BUILD_TESTS=OFF
 )
 add_library(libmsgpack STATIC SHARED IMPORTED)
 add_dependencies(libmsgpack msgpack)
@@ -167,7 +167,7 @@ add_dependencies(libcurl curl)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/cimplog
-    GIT_REPOSITORY https://github.com/Comcast/cimplog.git
+    GIT_REPOSITORY https://github.com/rdkcentral/cimplog.git
     GIT_TAG "1.0.2"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
@@ -180,7 +180,7 @@ add_dependencies(libcimplog cimplog)
 ExternalProject_Add(wrp-c
 	DEPENDS trower-base64 msgpack cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/wrp-c
-    GIT_REPOSITORY https://github.com/xmidt-org/wrp-c.git
+    GIT_REPOSITORY https://github.com/rdkcentral/wrp-c.git
     GIT_TAG "b5ef4d10cb39905908788bc89ab3e4dab201db8a"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMSGPACK_ENABLE_CXX=OFF
@@ -219,7 +219,7 @@ endif (ENABLE_SESHAT)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(cjwt
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/cjwt
-    GIT_REPOSITORY https://github.com/Comcast/cjwt.git
+    GIT_REPOSITORY https://github.com/rdkcentral/cjwt.git
     GIT_TAG "1b023c41bb2d6dbbf493c202ed81f06c84d5b51b"
     #GIT_TAG "1.0.1"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF -DCMAKE_C_FLAGS=-Wno-deprecated-declarations
@@ -244,7 +244,7 @@ add_library(libucresolv STATIC SHARED IMPORTED)
 add_dependencies(libucresolv ucresolv)
 include_directories(${INCLUDE_DIR}
                     ${INCLUDE_DIR}/ucresolv
-					)		
+					)
 
 endif (FEATURE_DNS_QUERY)
 

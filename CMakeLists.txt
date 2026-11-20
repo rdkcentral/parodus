@@ -232,7 +232,7 @@ if (FEATURE_DNS_QUERY)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(ucresolv
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/ucresolv
-    GIT_REPOSITORY https://github.com/Comcast/libucresolv.git
+    GIT_REPOSITORY https://github.com/rdkcentral/libucresolv.git
     GIT_TAG "1.0.0"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
     PATCH_COMMAND

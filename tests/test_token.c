@@ -50,7 +50,7 @@ const char *payload_insec  = "{" \
 const char *payload_no_end  = "{" \
 	"\"iss\":	\"SHA256:jdcRysFunWUAT852huQoIM9GN6k2s5c7iTMTMgujPAk\"}";
 
-const char *txt_record_id = "aabbccddeeff.test.webpa.comcast.net";
+const char *txt_record_id = "aabbccddeeff.test.webpa.example.net";
 
 #define MAX_RR_RECS 10
 

@@ -86,7 +86,7 @@ void test_requestNewAuthToken_init_fail ()
 	int output = -1;
 	memset(&cfg,0,sizeof(cfg));
 
-	cfg.token_server_url = strdup("https://dev.comcast.net/token");
+	cfg.token_server_url = strdup("https://dev.example.net/token");
 	parStrncpy(cfg.cert_path , "/etc/ssl/certs/ca-certificates.crt", sizeof(cfg.cert_path));
 	parStrncpy(cfg.hw_serial_number, "Fer23u948590", sizeof(cfg.hw_serial_number));
 	parStrncpy(cfg.hw_mac , "123567892366", sizeof(cfg.hw_mac));

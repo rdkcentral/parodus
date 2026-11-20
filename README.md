@@ -1,17 +1,16 @@
-<!--
-SPDX-FileCopyrightText: 2016-2021 Comcast Cable Communications Management, LLC
-SPDX-License-Identifier: Apache-2.0
--->
 # parodus
 
-[![Build Status](https://github.com/xmidt-org/parodus/workflows/CI/badge.svg)](https://github.com/xmidt-org/parodus/actions)
-[![codecov.io](http://codecov.io/github/xmidt-org/parodus/coverage.svg?branch=master)](http://codecov.io/github/xmidt-org/parodus?branch=master)
-[![Coverity](https://img.shields.io/coverity/scan/11192.svg)](https://scan.coverity.com/projects/comcast-parodus)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xmidt-org_parodus&metric=alert_status)](https://sonarcloud.io/dashboard?id=xmidt-org_parodus)
-[![Language Grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/xmidt-org/parodus.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/xmidt-org/parodus/context:cpp)
-[![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/xmidt-org/parodus/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/xmidt-org/parodus.svg)](CHANGELOG.md)
+[![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/rdkcentral/parodus/blob/master/LICENSE)
 
+## Origin
+
+This repository is based on the original
+[parodus](https://github.com/xmidt-org/parodus) source code
+maintained under the xmidt-org organization. The code was copied into the
+rdkcentral organization, where ongoing maintenance and development now take place.
+
+- Original project: https://github.com/xmidt-org/parodus
+- Current repository: https://github.com/rdkcentral/parodus
 
 C implementation of the XMiDT client coordinator
 

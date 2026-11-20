@@ -55,7 +55,7 @@ void test_set_global_conn()
     opts = nopoll_conn_opts_new ();
     nopoll_conn_opts_ssl_peer_verify (opts, nopoll_false);
     nopoll_conn_opts_set_ssl_protocol (opts, NOPOLL_METHOD_TLSV1_2); 
-    conn = nopoll_conn_tls_new(ctx, opts, "fabric-cd.webpa.comcast.net", "8080", NULL, "/api/v2/device", NULL, NULL, "eth0", headerNames, headerValues, headerCount);
+    conn = nopoll_conn_tls_new(ctx, opts, "fabric-cd.webpa.example.net", "8080", NULL, "/api/v2/device", NULL, NULL, "eth0", headerNames, headerValues, headerCount);
     set_global_conn(conn);
     CU_ASSERT(conn == get_global_conn());
     close_and_unref_connection(get_global_conn());
@@ -73,7 +73,7 @@ void test_set_parodus_cfg()
     parStrncpy(cfg.hw_last_reboot_reason , "unknown", sizeof(cfg.hw_last_reboot_reason));
     parStrncpy(cfg.fw_name , "2.364s2", sizeof(cfg.fw_name));
     parStrncpy(cfg.webpa_path_url , "/api/v2/device", sizeof(cfg.webpa_path_url));
-    parStrncpy(cfg.webpa_url , "fabric-cd.webpa.comcast.net", sizeof(cfg.webpa_url));
+    parStrncpy(cfg.webpa_url , "fabric-cd.webpa.example.net", sizeof(cfg.webpa_url));
     parStrncpy(cfg.webpa_interface_used , "eth0", sizeof(cfg.webpa_interface_used));
     parStrncpy(cfg.webpa_protocol , "WebPA-1.6", sizeof(cfg.webpa_protocol));
     parStrncpy(cfg.webpa_uuid , "1234567-345456546", sizeof(cfg.webpa_uuid));
